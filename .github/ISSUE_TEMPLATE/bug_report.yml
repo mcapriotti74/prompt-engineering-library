@@ -1,0 +1,107 @@
+name: Bug Report
+description: Report a bug or issue with the library
+title: "[Bug]: "
+labels: ["bug", "triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please provide as much detail as possible.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Bug Summary
+      description: A clear and concise description of the bug
+      placeholder: "Example: TDD workflow example fails with Python 3.12"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which part of the library is affected?
+      options:
+        - Core Principles
+        - Agents
+        - Workflows
+        - Templates
+        - Examples
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Detailed steps to reproduce the issue
+      placeholder: |
+        1. Copy prompt from 'tdd-workflow.md'
+        2. Execute with Claude Code v1.2.3
+        3. Run test command
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen?
+      placeholder: Tests should pass as documented
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happens?
+      placeholder: |
+        Error message or unexpected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Details about your environment
+      placeholder: |
+        - OS: Ubuntu 22.04
+        - Claude Code version: 1.2.3
+        - Python version: 3.12
+        - Relevant tools/frameworks: pytest 7.4.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Screenshots, logs, or error messages
+      placeholder: Paste error messages, screenshots, or relevant logs here
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information
+      placeholder: This worked in v1.0.0 but broke in v1.1.0
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues to avoid duplicates
+          required: true
+        - label: I have provided steps to reproduce
+          required: true
+        - label: I have included environment details
+          required: true

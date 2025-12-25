@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: GitHub Discussions
+    url: https://github.com/mcapriotti74/prompt-engineering-library/discussions
+    about: For general discussions, ideas, and community interaction
+  - name: Email Support
+    url: mailto:mc@itecnis.com
+    about: For private inquiries or collaboration opportunities

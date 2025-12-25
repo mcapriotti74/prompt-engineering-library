@@ -1,0 +1,104 @@
+name: Question
+description: Ask a question about using the library
+title: "[Question]: "
+labels: ["question"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have a question? We're here to help!
+
+        Before asking:
+        - Check the documentation (README.md, workflow files, agent files)
+        - Search existing issues (including closed ones)
+        - Review examples/ directory for similar use cases
+
+  - type: input
+    id: title
+    attributes:
+      label: Question
+      description: Your question in one sentence
+      placeholder: "How do I integrate the Data Detective agent with TDD workflow?"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Related To
+      description: Which part of the library is this about?
+      options:
+        - Core Principles
+        - Agents
+        - Workflows
+        - Templates
+        - Examples
+        - General Usage
+        - Integration with Claude Code
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Provide more details about what you're trying to accomplish
+      placeholder: |
+        I'm working on a data analysis project where I need to:
+        - Find correlations in large datasets
+        - Validate findings with statistical tests
+        - Follow TDD principles
+
+        I'm not sure how to combine the Data Detective agent with the TDD workflow.
+    validations:
+      required: true
+
+  - type: textarea
+    id: attempted
+    attributes:
+      label: What Have You Tried?
+      description: What have you attempted so far?
+      placeholder: |
+        - Read data-detective.md and tdd-workflow.md
+        - Tried combining prompts but results inconsistent
+        - Looked for similar examples in /examples directory
+
+  - type: textarea
+    id: expected-outcome
+    attributes:
+      label: Expected Outcome
+      description: What are you hoping to achieve?
+      placeholder: |
+        I want to:
+        1. Use Data Detective for exploratory analysis
+        2. Write tests for my hypotheses first
+        3. Implement analysis code that passes tests
+        4. Get evidence-based results
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency
+      description: How urgent is this question?
+      options:
+        - Just curious
+        - Would be helpful soon
+        - Blocking my work
+        - Critical issue
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues
+          required: true
+        - label: I have read the relevant documentation
+          required: true
+        - label: This is not a bug report (use Bug Report template instead)
+          required: true

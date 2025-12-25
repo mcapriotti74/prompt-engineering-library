@@ -1,0 +1,134 @@
+name: Feature Request
+description: Suggest a new agent, workflow, or enhancement
+title: "[Feature]: "
+labels: ["enhancement"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a feature! Please ensure it aligns with the library's philosophy:
+        - Generic and technology-agnostic
+        - Evidence-based practices
+        - Long-lasting principles
+
+  - type: input
+    id: title
+    attributes:
+      label: Feature Title
+      description: Short, descriptive title for the feature
+      placeholder: "Example: Add Security Audit Agent"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: What type of feature is this?
+      options:
+        - New Agent
+        - New Workflow
+        - New Template
+        - Enhancement to Existing Component
+        - Documentation Improvement
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What problem does this feature solve?
+      placeholder: |
+        Currently, there's no specialized agent for identifying security vulnerabilities.
+        Developers need guidance on security audit practices within Claude Code workflows.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: How would this feature work?
+      placeholder: |
+        Create a security-audit-agent.md that:
+        - Scans dependencies for CVEs
+        - Reviews code for common vulnerabilities (SQL injection, XSS, etc.)
+        - Checks infrastructure configurations
+        - Generates security report with evidence
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: Use Cases
+      description: Provide 2-3 real-world scenarios where this would be useful
+      placeholder: |
+        1. Pre-deployment security audit for web applications
+        2. Regular security scans in CI/CD pipeline
+        3. Third-party dependency vulnerability assessment
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: What other approaches did you consider?
+      placeholder: |
+        - Integrate security checks into existing DevOps agent
+        - Create separate security-focused workflows
+        - Manual security checklist
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      description: Does this fit the CORE library or should it be in a separate repo?
+      options:
+        - Core Library (generic, stable principles)
+        - Tools Repository (specific implementations)
+        - Recipes Repository (complete use cases)
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Example Usage
+      description: Show how this feature would be used
+      placeholder: |
+        ```markdown
+        Prompt:
+        "Use security-audit-agent to scan this Django application for vulnerabilities:
+        1. Check requirements.txt for outdated packages with CVEs
+        2. Scan views.py for SQL injection risks
+        3. Verify CSRF protection is enabled
+        4. Report findings with severity levels"
+        ```
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      options:
+        - label: I'm willing to contribute this feature myself
+        - label: I can provide review/feedback if someone else implements it
+        - label: I can provide real-world examples from my projects
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: This feature is generic and technology-agnostic
+          required: true
+        - label: This feature solves a real problem
+          required: true
+        - label: I've checked this doesn't duplicate existing functionality
+          required: true
